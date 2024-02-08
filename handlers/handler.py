@@ -49,7 +49,7 @@ async def echo_handler(message: Message) -> None:
 # handlers illustrating State workflow
 # comment echo_handler to test
 @router.message(Command(commands=[cmd_test]))
-async def cmd_test(message: Message, state: FSMContext):
+async def command_test_handler(message: Message, state: FSMContext):
     await state.clear()
     test_flow_message = f'test state initiated at {message.date}'
     await state.update_data(test_data=test_flow_message)
